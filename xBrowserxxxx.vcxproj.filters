@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="xBrowser\browser\binding_test.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\browser_window.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\bytes_write_handler.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\client_app_delegates_browser.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\client_browser.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\client_handler.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\client_handler_osr.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\client_handler_std.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\dialog_test.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\image_cache.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\main_context.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\main_context_impl.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\media_router_test.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\osr_renderer.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\preferences_test.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\response_filter_test.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\root_window.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\root_window_create.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\root_window_manager.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\root_window_views.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\scheme_test.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\server_test.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\test_runner.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\urlrequest_test.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\views_menu_bar.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\views_overlay_controls.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\views_style.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\views_window.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\window_test.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\window_test_runner.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\window_test_runner_views.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\browser\client_app_browser.cc">
+      <Filter>shared\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\browser\extension_util.cc">
+      <Filter>shared\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\browser\file_util.cc">
+      <Filter>shared\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\browser\geometry_util.cc">
+      <Filter>shared\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\browser\main_message_loop.cc">
+      <Filter>shared\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\browser\main_message_loop_external_pump.cc">
+      <Filter>shared\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\browser\main_message_loop_std.cc">
+      <Filter>shared\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\common\client_app_delegates_common.cc">
+      <Filter>xBrowser\common</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\common\scheme_test_common.cc">
+      <Filter>xBrowser\common</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\common\client_app.cc">
+      <Filter>shared\common</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\common\client_app_other.cc">
+      <Filter>shared\common</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\common\client_switches.cc">
+      <Filter>shared\common</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\renderer\client_app_delegates_renderer.cc">
+      <Filter>xBrowser\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\renderer\client_renderer.cc">
+      <Filter>xBrowser\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\renderer\performance_test.cc">
+      <Filter>xBrowser\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\renderer\performance_test_tests.cc">
+      <Filter>xBrowser\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\renderer\client_app_renderer.cc">
+      <Filter>shared\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\browser_window_osr_win.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\browser_window_std_win.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\main_context_impl_win.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\main_message_loop_multithreaded_win.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\osr_accessibility_helper.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\osr_accessibility_node.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\osr_accessibility_node_win.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\osr_d3d11_win.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\osr_dragdrop_win.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\osr_ime_handler_win.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\osr_render_handler_win.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\osr_render_handler_win_d3d11.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\osr_render_handler_win_gl.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\osr_window_win.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\resource_util_win_idmap.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\root_window_win.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\temp_window_win.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\browser\window_test_runner_win.cc">
+      <Filter>xBrowser\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\browser\main_message_loop_external_pump_win.cc">
+      <Filter>shared\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\browser\resource_util_win.cc">
+      <Filter>shared\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\browser\util_win.cc">
+      <Filter>shared\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="xBrowser\xBrowser_win.cc">
+      <Filter>xBrowser</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+      <UniqueIdentifier>{4AD7CFC0-1B74-3159-8CAD-8E43D0E3140D}</UniqueIdentifier>
+    </Filter>
+      <UniqueIdentifier>{E2E7B55B-1FEB-3C51-A995-B2B7D1A3C82F}</UniqueIdentifier>
+    </Filter>
+      <UniqueIdentifier>{AF6EB3B7-9ACB-3BE8-A09D-A3DD09AE2512}</UniqueIdentifier>
+    </Filter>
+      <UniqueIdentifier>{9A4FC36D-C350-3B82-84A3-4AB83C2C0746}</UniqueIdentifier>
+    </Filter>
+      <UniqueIdentifier>{D56E3361-E194-3B7B-82F8-E1684F226A8B}</UniqueIdentifier>
+    </Filter>
+      <UniqueIdentifier>{97A060E3-D9E2-3F55-B6F6-B3219D9451CE}</UniqueIdentifier>
+    </Filter>
+      <UniqueIdentifier>{3F060D5F-93D3-3E34-AFAE-9608FA2B1887}</UniqueIdentifier>
+    </Filter>
+      <UniqueIdentifier>{9B59A573-1BE8-32A6-B20B-11FDC96738B8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared">
+      <UniqueIdentifier>{7473DF47-8FF7-359B-8B92-0720FC0C02D1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\browser">
+      <UniqueIdentifier>{D98D1AE8-397C-345F-A5DC-8AA280EF7270}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\common">
+      <UniqueIdentifier>{003D6B92-FD53-3409-8276-4A0274EDB9CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\renderer">
+      <UniqueIdentifier>{294868F6-5523-3404-B570-5B8647023BA5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\resources">
+      <UniqueIdentifier>{14BAC0E2-5FE3-3EC4-87A0-D96EEB6CA96A}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="xBrowser\resources\win\xBrowser.rc">
+      <Filter>xBrowser\resources</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

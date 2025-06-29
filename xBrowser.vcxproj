@@ -1,0 +1,699 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{4242D25A-B762-3474-AE63-7D446E593B11}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>xBrowser</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">x64\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">xBrowser.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">xBrowser</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">x64\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">xBrowser.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">xBrowser</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4100;4127;4244;4324;4481;4512;4701;4702;4996</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <MinimalRebuild>
+      </MinimalRebuild>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <SupportJustMyCode>
+      </SupportJustMyCode>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;__STDC_CONSTANT_MACROS;__STDC_FORMAT_MACROS;_WIN32;UNICODE;_UNICODE;WINVER=0x0601;_WIN32_WINNT=0x601;NOMINMAX;WIN32_LEAN_AND_MEAN;_HAS_EXCEPTIONS=0;CEF_USE_ATL;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;__STDC_CONSTANT_MACROS;__STDC_FORMAT_MACROS;_WIN32;UNICODE;_UNICODE;WINVER=0x0601;_WIN32_WINNT=0x601;NOMINMAX;WIN32_LEAN_AND_MEAN;_HAS_EXCEPTIONS=0;CEF_USE_ATL;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>Adding manifest...															</Message>
+      <Command>setlocal
+mt.exe -nologo -manifest "./xBrowser/resources/win/xBrowser.exe.manifest" "./xBrowser/resources/win/compatibility.manifest" -outputresource:"./x64/Debug/xBrowser.exe";#1
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"cmake.exe" -E copy_if_different ./deps/chrome_elf.dll ./x64/Debug/chrome_elf.dll
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"cmake.exe" -E copy_if_different ./deps/libcef.dll ./x64/Debug/libcef.dll
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"cmake.exe" -E copy_if_different ./deps/libEGL.dll ./x64/Debug/libEGL.dll
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"cmake.exe" -E copy_if_different ./deps/libGLESv2.dll ./x64/Debug/libGLESv2.dll
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"cmake.exe" -E copy_if_different ./deps/snapshot_blob.bin ./x64/Debug/snapshot_blob.bin
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"cmake.exe" -E copy_if_different ./deps/v8_context_snapshot.bin ./x64/Debug/v8_context_snapshot.bin
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"cmake.exe" -E copy_if_different ./deps/vk_swiftshader.dll ./x64/Debug/vk_swiftshader.dll
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"cmake.exe" -E copy_if_different ./deps/vk_swiftshader_icd.json ./x64/Debug/vk_swiftshader_icd.json
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"cmake.exe" -E copy_if_different ./deps/vulkan-1.dll ./x64/Debug/vulkan-1.dll
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"cmake.exe" -E copy_if_different ./deps/d3dcompiler_47.dll ./x64/Debug/d3dcompiler_47.dll
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"cmake.exe" -E copy_if_different ./Resources/chrome_100_percent.pak ./x64/Debug/chrome_100_percent.pak
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"cmake.exe" -E copy_if_different ./Resources/chrome_200_percent.pak ./x64/Debug/chrome_200_percent.pak
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"cmake.exe" -E copy_if_different ./Resources/resources.pak ./x64/Debug/resources.pak
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"cmake.exe" -E copy_if_different ./Resources/icudtl.dat ./x64/Debug/icudtl.dat
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"cmake.exe" -E copy_directory ./Resources/locales ./x64/Debug/locales
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>.\deps\libcef.lib;.\x64\Debug\libcef_dll_wrapper.lib;comctl32.lib;gdi32.lib;rpcrt4.lib;shlwapi.lib;ws2_32.lib;d3d11.lib;glu32.lib;imm32.lib;opengl32.lib;oleacc.lib;kernel32.lib;user32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>./x64/Debug/xBrowser.lib</ImportLibrary>
+      <LargeAddressAware>true</LargeAddressAware>
+      <ProgramDataBaseFile>./x64/Debug/xBrowser.pdb</ProgramDataBaseFile>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4100;4127;4244;4324;4481;4512;4701;4702;4996</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <MinimalRebuild>
+      </MinimalRebuild>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <StringPooling>true</StringPooling>
+      <SupportJustMyCode>
+      </SupportJustMyCode>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;__STDC_CONSTANT_MACROS;__STDC_FORMAT_MACROS;_WIN32;UNICODE;_UNICODE;WINVER=0x0601;_WIN32_WINNT=0x601;NOMINMAX;WIN32_LEAN_AND_MEAN;_HAS_EXCEPTIONS=0;CEF_USE_ATL;_NDEBUG;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;__STDC_CONSTANT_MACROS;__STDC_FORMAT_MACROS;_WIN32;UNICODE;_UNICODE;WINVER=0x0601;_WIN32_WINNT=0x601;NOMINMAX;WIN32_LEAN_AND_MEAN;_HAS_EXCEPTIONS=0;CEF_USE_ATL;_NDEBUG;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>Adding manifest...															</Message>
+      <Command>setlocal
+mt.exe -nologo -manifest "./xBrowser/resources/win/xBrowser.exe.manifest" "./xBrowser/resources/win/compatibility.manifest" -outputresource:"./x64/Release/xBrowser.exe";#1
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"cmake.exe" -E copy_if_different ./deps/chrome_elf.dll ./x64/Release/chrome_elf.dll
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"cmake.exe" -E copy_if_different ./deps/libcef.dll ./x64/Release/libcef.dll
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"cmake.exe" -E copy_if_different ./deps/libEGL.dll ./x64/Release/libEGL.dll
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"cmake.exe" -E copy_if_different ./deps/libGLESv2.dll ./x64/Release/libGLESv2.dll
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"cmake.exe" -E copy_if_different ./deps/snapshot_blob.bin ./x64/Release/snapshot_blob.bin
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"cmake.exe" -E copy_if_different ./deps/v8_context_snapshot.bin ./x64/Release/v8_context_snapshot.bin
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"cmake.exe" -E copy_if_different ./deps/vk_swiftshader.dll ./x64/Release/vk_swiftshader.dll
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"cmake.exe" -E copy_if_different ./deps/vk_swiftshader_icd.json ./x64/Release/vk_swiftshader_icd.json
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"cmake.exe" -E copy_if_different ./deps/vulkan-1.dll ./x64/Release/vulkan-1.dll
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"cmake.exe" -E copy_if_different ./deps/d3dcompiler_47.dll ./x64/Release/d3dcompiler_47.dll
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"cmake.exe" -E copy_if_different ./Resources/chrome_100_percent.pak ./x64/Release/chrome_100_percent.pak
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"cmake.exe" -E copy_if_different ./Resources/chrome_200_percent.pak ./x64/Release/chrome_200_percent.pak
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"cmake.exe" -E copy_if_different ./Resources/resources.pak ./x64/Release/resources.pak
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"cmake.exe" -E copy_if_different ./Resources/icudtl.dat ./x64/Release/icudtl.dat
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"cmake.exe" -E copy_directory ./Resources/locales ./x64/Release/locales
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>.\deps\libcef.lib;.\x64\Release\libcef_dll_wrapper.lib;comctl32.lib;gdi32.lib;rpcrt4.lib;shlwapi.lib;ws2_32.lib;d3d11.lib;glu32.lib;imm32.lib;opengl32.lib;oleacc.lib;kernel32.lib;user32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>x64/Release/xBrowser.lib</ImportLibrary>
+      <LargeAddressAware>true</LargeAddressAware>
+      <ProgramDataBaseFile>x64/Release/xBrowser.pdb</ProgramDataBaseFile>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="xBrowser\browser\binding_test.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClInclude Include="xBrowser\browser\binding_test.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClCompile Include="xBrowser\browser\browser_window.cc" />
+    <ClInclude Include="xBrowser\browser\browser_window.h" />
+    <ClCompile Include="xBrowser\browser\bytes_write_handler.cc" />
+    <ClInclude Include="xBrowser\browser\bytes_write_handler.h" />
+    <ClCompile Include="xBrowser\browser\client_app_delegates_browser.cc" />
+    <ClCompile Include="xBrowser\browser\client_browser.cc" />
+    <ClInclude Include="xBrowser\browser\client_browser.h" />
+    <ClCompile Include="xBrowser\browser\client_handler.cc" />
+    <ClInclude Include="xBrowser\browser\client_handler.h" />
+    <ClCompile Include="xBrowser\browser\client_handler_osr.cc" />
+    <ClInclude Include="xBrowser\browser\client_handler_osr.h" />
+    <ClCompile Include="xBrowser\browser\client_handler_std.cc" />
+    <ClInclude Include="xBrowser\browser\client_handler_std.h" />
+    <ClInclude Include="xBrowser\browser\client_types.h" />
+    <ClCompile Include="xBrowser\browser\dialog_test.cc" />
+    <ClInclude Include="xBrowser\browser\dialog_test.h" />
+    <ClCompile Include="xBrowser\browser\image_cache.cc" />
+    <ClInclude Include="xBrowser\browser\image_cache.h" />
+    <ClCompile Include="xBrowser\browser\main_context.cc" />
+    <ClInclude Include="xBrowser\browser\main_context.h" />
+    <ClCompile Include="xBrowser\browser\main_context_impl.cc" />
+    <ClInclude Include="xBrowser\browser\main_context_impl.h" />
+    <ClCompile Include="xBrowser\browser\media_router_test.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClInclude Include="xBrowser\browser\media_router_test.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="xBrowser\browser\osr_dragdrop_events.h" />
+    <ClCompile Include="xBrowser\browser\osr_renderer.cc" />
+    <ClInclude Include="xBrowser\browser\osr_renderer.h" />
+    <ClInclude Include="xBrowser\browser\osr_renderer_settings.h" />
+    <ClCompile Include="xBrowser\browser\preferences_test.cc" />
+    <ClInclude Include="xBrowser\browser\preferences_test.h" />
+    <ClInclude Include="xBrowser\browser\resource.h" />
+    <ClCompile Include="xBrowser\browser\response_filter_test.cc" />
+    <ClInclude Include="xBrowser\browser\response_filter_test.h" />
+    <ClCompile Include="xBrowser\browser\root_window.cc" />
+    <ClInclude Include="xBrowser\browser\root_window.h" />
+    <ClCompile Include="xBrowser\browser\root_window_create.cc" />
+    <ClCompile Include="xBrowser\browser\root_window_manager.cc" />
+    <ClInclude Include="xBrowser\browser\root_window_manager.h" />
+    <ClCompile Include="xBrowser\browser\root_window_views.cc" />
+    <ClInclude Include="xBrowser\browser\root_window_views.h" />
+    <ClCompile Include="xBrowser\browser\scheme_test.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClInclude Include="xBrowser\browser\scheme_test.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClCompile Include="xBrowser\browser\server_test.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClInclude Include="xBrowser\browser\server_test.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="xBrowser\browser\temp_window.h" />
+    <ClCompile Include="xBrowser\browser\test_runner.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClInclude Include="xBrowser\browser\test_runner.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClCompile Include="xBrowser\browser\urlrequest_test.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClInclude Include="xBrowser\browser\urlrequest_test.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClCompile Include="xBrowser\browser\views_menu_bar.cc" />
+    <ClInclude Include="xBrowser\browser\views_menu_bar.h" />
+    <ClCompile Include="xBrowser\browser\views_overlay_controls.cc" />
+    <ClInclude Include="xBrowser\browser\views_overlay_controls.h" />
+    <ClCompile Include="xBrowser\browser\views_style.cc" />
+    <ClInclude Include="xBrowser\browser\views_style.h" />
+    <ClCompile Include="xBrowser\browser\views_window.cc" />
+    <ClInclude Include="xBrowser\browser\views_window.h" />
+    <ClCompile Include="xBrowser\browser\window_test.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClInclude Include="xBrowser\browser\window_test.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClCompile Include="xBrowser\browser\window_test_runner.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClInclude Include="xBrowser\browser\window_test_runner.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClCompile Include="xBrowser\browser\window_test_runner_views.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClInclude Include="xBrowser\browser\window_test_runner_views.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClCompile Include="Shared\browser\client_app_browser.cc" />
+    <ClInclude Include="Shared\browser\client_app_browser.h" />
+    <ClCompile Include="Shared\browser\extension_util.cc" />
+    <ClInclude Include="Shared\browser\extension_util.h" />
+    <ClCompile Include="Shared\browser\file_util.cc" />
+    <ClInclude Include="Shared\browser\file_util.h" />
+    <ClCompile Include="Shared\browser\geometry_util.cc" />
+    <ClInclude Include="Shared\browser\geometry_util.h" />
+    <ClCompile Include="Shared\browser\main_message_loop.cc" />
+    <ClInclude Include="Shared\browser\main_message_loop.h" />
+    <ClCompile Include="Shared\browser\main_message_loop_external_pump.cc" />
+    <ClInclude Include="Shared\browser\main_message_loop_external_pump.h" />
+    <ClCompile Include="Shared\browser\main_message_loop_std.cc" />
+    <ClInclude Include="Shared\browser\main_message_loop_std.h" />
+    <ClInclude Include="Shared\browser\resource_util.h" />
+    <ClCompile Include="xBrowser\common\client_app_delegates_common.cc" />
+    <ClCompile Include="xBrowser\common\scheme_test_common.cc" />
+    <ClInclude Include="xBrowser\common\scheme_test_common.h" />
+    <ClCompile Include="Shared\common\client_app.cc" />
+    <ClInclude Include="Shared\common\client_app.h" />
+    <ClCompile Include="Shared\common\client_app_other.cc" />
+    <ClInclude Include="Shared\common\client_app_other.h" />
+    <ClCompile Include="Shared\common\client_switches.cc" />
+    <ClInclude Include="Shared\common\client_switches.h" />
+    <ClCompile Include="xBrowser\renderer\client_app_delegates_renderer.cc" />
+    <ClCompile Include="xBrowser\renderer\client_renderer.cc" />
+    <ClInclude Include="xBrowser\renderer\client_renderer.h" />
+    <ClCompile Include="xBrowser\renderer\performance_test.cc" />
+    <ClInclude Include="xBrowser\renderer\performance_test.h" />
+    <ClInclude Include="xBrowser\renderer\performance_test_setup.h" />
+    <ClCompile Include="xBrowser\renderer\performance_test_tests.cc" />
+    <ClCompile Include="Shared\renderer\client_app_renderer.cc" />
+    <ClInclude Include="Shared\renderer\client_app_renderer.h" />
+    <None Include="xBrowser\resources\binding.html">
+    </None>
+    <None Include="xBrowser\resources\dialogs.html">
+    </None>
+    <None Include="xBrowser\resources\draggable.html">
+    </None>
+    <None Include="xBrowser\resources\localstorage.html">
+    </None>
+    <Image Include="xBrowser\resources\logo.png">
+    </Image>
+    <None Include="xBrowser\resources\media_router.html">
+    </None>
+    <Image Include="xBrowser\resources\menu_icon.1x.png">
+    </Image>
+    <Image Include="xBrowser\resources\menu_icon.2x.png">
+    </Image>
+    <None Include="xBrowser\resources\other_tests.html">
+    </None>
+    <None Include="xBrowser\resources\performance.html">
+    </None>
+    <None Include="xBrowser\resources\performance2.html">
+    </None>
+    <None Include="xBrowser\resources\preferences.html">
+    </None>
+    <None Include="xBrowser\resources\response_filter.html">
+    </None>
+    <None Include="xBrowser\resources\server.html">
+    </None>
+    <None Include="xBrowser\resources\transparency.html">
+    </None>
+    <None Include="xBrowser\resources\urlrequest.html">
+    </None>
+    <None Include="xBrowser\resources\websocket.html">
+    </None>
+    <None Include="xBrowser\resources\window.html">
+    </None>
+    <None Include="xBrowser\resources\xmlhttprequest.html">
+    </None>
+    <None Include="xBrowser\resources\extensions\set_page_color\README.md">
+    </None>
+    <Image Include="xBrowser\resources\extensions\set_page_color\icon.png">
+    </Image>
+    <None Include="xBrowser\resources\extensions\set_page_color\manifest.json">
+    </None>
+    <None Include="xBrowser\resources\extensions\set_page_color\popup.html">
+    </None>
+    <None Include="xBrowser\resources\extensions\set_page_color\popup.js">
+    </None>
+    <None Include="Shared\resources\osr_test.html">
+    </None>
+    <None Include="Shared\resources\pdf.html">
+    </None>
+    <None Include="Shared\resources\pdf.pdf">
+    </None>
+    <Image Include="Shared\resources\window_icon.1x.png">
+    </Image>
+    <Image Include="Shared\resources\window_icon.2x.png">
+    </Image>
+    <ClCompile Include="xBrowser\xBrowser_win.cc" />
+    <ClCompile Include="xBrowser\browser\browser_window_osr_win.cc" />
+    <ClInclude Include="xBrowser\browser\browser_window_osr_win.h" />
+    <ClCompile Include="xBrowser\browser\browser_window_std_win.cc" />
+    <ClInclude Include="xBrowser\browser\browser_window_std_win.h" />
+    <ClCompile Include="xBrowser\browser\main_context_impl_win.cc" />
+    <ClCompile Include="xBrowser\browser\main_message_loop_multithreaded_win.cc" />
+    <ClInclude Include="xBrowser\browser\main_message_loop_multithreaded_win.h" />
+    <ClCompile Include="xBrowser\browser\osr_accessibility_helper.cc" />
+    <ClInclude Include="xBrowser\browser\osr_accessibility_helper.h" />
+    <ClCompile Include="xBrowser\browser\osr_accessibility_node.cc" />
+    <ClInclude Include="xBrowser\browser\osr_accessibility_node.h" />
+    <ClCompile Include="xBrowser\browser\osr_accessibility_node_win.cc" />
+    <ClCompile Include="xBrowser\browser\osr_d3d11_win.cc" />
+    <ClInclude Include="xBrowser\browser\osr_d3d11_win.h" />
+    <ClCompile Include="xBrowser\browser\osr_dragdrop_win.cc" />
+    <ClInclude Include="xBrowser\browser\osr_dragdrop_win.h" />
+    <ClCompile Include="xBrowser\browser\osr_ime_handler_win.cc" />
+    <ClInclude Include="xBrowser\browser\osr_ime_handler_win.h" />
+    <ClCompile Include="xBrowser\browser\osr_render_handler_win.cc" />
+    <ClInclude Include="xBrowser\browser\osr_render_handler_win.h" />
+    <ClCompile Include="xBrowser\browser\osr_render_handler_win_d3d11.cc" />
+    <ClInclude Include="xBrowser\browser\osr_render_handler_win_d3d11.h" />
+    <ClCompile Include="xBrowser\browser\osr_render_handler_win_gl.cc" />
+    <ClInclude Include="xBrowser\browser\osr_render_handler_win_gl.h" />
+    <ClCompile Include="xBrowser\browser\osr_window_win.cc" />
+    <ClInclude Include="xBrowser\browser\osr_window_win.h" />
+    <ClCompile Include="xBrowser\browser\resource_util_win_idmap.cc" />
+    <ClCompile Include="xBrowser\browser\root_window_win.cc" />
+    <ClInclude Include="xBrowser\browser\root_window_win.h" />
+    <ClCompile Include="xBrowser\browser\temp_window_win.cc" />
+    <ClInclude Include="xBrowser\browser\temp_window_win.h" />
+    <ClCompile Include="xBrowser\browser\window_test_runner_win.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClInclude Include="xBrowser\browser\window_test_runner_win.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ResourceCompile Include="xBrowser\resources\win\xBrowser.rc" />
+    <ClCompile Include="Shared\browser\main_message_loop_external_pump_win.cc" />
+    <ClCompile Include="Shared\browser\resource_util_win.cc" />
+    <ClCompile Include="Shared\browser\util_win.cc" />
+    <ClInclude Include="Shared\browser\util_win.h" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

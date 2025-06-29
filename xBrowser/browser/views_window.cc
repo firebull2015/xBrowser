@@ -298,6 +298,12 @@ void ViewsWindow::OnBeforeContextMenu(CefRefPtr<CefMenuModel> model) {
   views_style::ApplyTo(model);
 }
 
+void ViewsWindow::OnUrlReady(CefString type, CefString url) {
+    CEF_REQUIRE_UI_THREAD();
+
+    //xlh todo
+}
+
 void ViewsWindow::OnExtensionsChanged(const ExtensionSet& extensions) {
   CEF_REQUIRE_UI_THREAD();
 

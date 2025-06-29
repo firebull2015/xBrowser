@@ -120,6 +120,7 @@ class ViewsWindow : public CefBrowserViewDelegate,
   void TakeFocus(bool next);
   void OnBeforeContextMenu(CefRefPtr<CefMenuModel> model);
   void OnExtensionsChanged(const ExtensionSet& extensions);
+  void OnUrlReady(CefString type, CefString url);
 
   // CefBrowserViewDelegate methods:
   CefRefPtr<CefBrowserViewDelegate> GetDelegateForPopupBrowserView(

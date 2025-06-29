@@ -464,6 +464,13 @@ void RootWindowViews::OnBeforeContextMenu(CefRefPtr<CefMenuModel> model) {
     window_->OnBeforeContextMenu(model);
 }
 
+void RootWindowViews::OnUrlReady(CefString type, CefString url)
+{
+    CEF_REQUIRE_UI_THREAD();
+    if (window_)
+        window_->OnUrlReady(type,url);
+}
+
 void RootWindowViews::CreateClientHandler(const std::string& url) {
   DCHECK(!client_handler_);
 

@@ -975,6 +975,12 @@ bool ClientHandler::OnResourceResponse(CefRefPtr<CefBrowser> browser,
     CefRefPtr<CefRequest> request,
     CefRefPtr<CefResponse> response)
 {
+
+    if (delegate_)
+        delegate_->OnUrlReady(response->GetHeaderByName("Content-Type"), request->GetURL());
+    
+    //ParseMediaList(response->GetHeaderByName("Content-Type"), request->GetURL());
+
     return resource_manager_->OnResourceResponse(browser, frame, request, response);
 }
 
@@ -1372,5 +1378,38 @@ bool ClientHandler::IsAllowedCommandId(int command_id) {
   }
   return false;
 }
+
+//std::vector<std::string>& ClientHandler::GetMediaList()
+//{
+//    std::lock_guard<std::recursive_mutex> auto_lock(lockList);
+//    return media_list;
+//}
+//void ClientHandler::ClearMediaList() {
+//    std::lock_guard<std::recursive_mutex> auto_lock(lockList);
+//    media_list.clear();
+//}
+
+//bool ClientHandler::ParseMediaList(CefString type, CefString url)
+//{
+//    std::string sType = type.ToString();
+//
+//    std::transform(sType.begin(), sType.end(), sType.begin(), ::tolower);
+//
+//    if (sType == "application/x-mpegurl")
+//        sType = "video";
+//    else
+//        sType = type.ToString().substr(0, 5);
+//
+//    if (sType == "image" || sType == "video" || sType == "audio") {
+//        std::string media = sType + "*" + url.ToString();
+//
+//        std::lock_guard<std::recursive_mutex> auto_lock(lockList);
+//        media_list.push_back(media);
+//
+//        return true;
+//    }
+//
+//    return false;
+//}
 
 }  // namespace client

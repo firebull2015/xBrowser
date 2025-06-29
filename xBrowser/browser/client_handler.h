@@ -9,6 +9,7 @@
 #include <set>
 #include <string>
 
+
 #include "include/cef_client.h"
 #include "include/wrapper/cef_helpers.h"
 #include "include/wrapper/cef_message_router.h"
@@ -83,6 +84,10 @@ class ClientHandler : public CefClient,
 
     // Called on the UI thread before a context menu is displayed.
     virtual void OnBeforeContextMenu(CefRefPtr<CefMenuModel> model) {}
+
+	// Called when OnResourceResponse
+    virtual void OnUrlReady(CefString type, CefString url) {}
+    
 
    protected:
     virtual ~Delegate() {}
@@ -446,6 +451,16 @@ class ClientHandler : public CefClient,
   MessageHandlerSet message_handler_set_;
 
   DISALLOW_COPY_AND_ASSIGN(ClientHandler);
+
+  //Media list
+//protected:
+//      std::recursive_mutex lockList;
+//      std::vector<std::string> media_list;
+//
+//      bool ParseMediaList(CefString type, CefString url);
+//public:
+//    std::vector<std::string>& GetMediaList();
+//    void ClearMediaList();
 };
 
 }  // namespace client

@@ -111,6 +111,10 @@ class RootWindowWin : public RootWindow, public BrowserWindow::Delegate {
 
   void NotifyDestroyedIfDone();
 
+  void OnUrlReady(CefString type, CefString url) override;
+
+  bool ParseMediaList(CefString type, CefString url);
+
   // After initialization all members are only accessed on the main thread.
   // Members set during initialization.
   bool with_controls_;
@@ -134,6 +138,9 @@ class RootWindowWin : public RootWindow, public BrowserWindow::Delegate {
 
   //Video List window
   HWND  hwnd_video_;
+
+  //Video List window
+  HWND  hwnd_audio_;
 
   // Draggable region.
   HRGN draggable_region_;

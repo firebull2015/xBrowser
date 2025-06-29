@@ -6,6 +6,11 @@
 
 #include <shellscalingapi.h>
 
+#include <set>
+#include <string>
+#include <mutex>
+#include <algorithm>
+
 #include "include/base/cef_build.h"
 #include "include/base/cef_callback.h"
 #include "include/cef_app.h"
@@ -113,6 +118,7 @@ namespace client {
 		hwnd_tab_(nullptr),
 		hwnd_image_(nullptr),
 		hwnd_video_(nullptr),
+		hwnd_audio_(nullptr),
 		draggable_region_(nullptr),
 		font_(nullptr),
 		font_height_(0),
@@ -687,6 +693,8 @@ namespace client {
 					TRUE);
 				SendMessage(hwnd_video_, WM_SETFONT, reinterpret_cast<WPARAM>(font_),
 					TRUE);
+				SendMessage(hwnd_audio_, WM_SETFONT, reinterpret_cast<WPARAM>(font_),
+					TRUE);
 				SendMessage(hwnd_image_, WM_SETFONT, reinterpret_cast<WPARAM>(font_),
 					TRUE);
 
@@ -706,7 +714,7 @@ namespace client {
 			rect.top += urlbar_height;
 
 			int x_offset = rect.left;
-			int w_image = 300;
+			int w_image = 500;
 			int h_tab=26;
 
 			// |browser_hwnd| may be nullptr if the browser has not yet been created.
@@ -749,6 +757,12 @@ namespace client {
 			hdwp = DeferWindowPos(hdwp, hwnd_video_, nullptr, x_offset, rect.top + h_tab,
 				w_image, rect.bottom - rect.top - h_tab,
 				SWP_NOZORDER);
+
+			hdwp = DeferWindowPos(hdwp, hwnd_audio_, nullptr, x_offset, rect.top + h_tab,
+				w_image, rect.bottom - rect.top - h_tab,
+				SWP_NOZORDER);
+
+	
 
 			BOOL result = EndDeferWindowPos(hdwp);
 			ALLOW_UNUSED_LOCAL(result);
@@ -954,7 +968,18 @@ namespace client {
 				0,
 				0,
 				hwnd_,
-				reinterpret_cast<HMENU>(IDC_LISTCTRL_IMAGE),
+				reinterpret_cast<HMENU>(IDC_LISTCTRL_VIDEO),
+				hInstance,
+				NULL);
+
+			hwnd_audio_ = CreateWindow(WC_LISTVIEW,
+				L"",
+				WS_CHILD |  LVS_REPORT | LVS_EDITLABELS | WS_BORDER,
+				0, 0,
+				0,
+				0,
+				hwnd_,
+				reinterpret_cast<HMENU>(IDC_LISTCTRL_AUDIO),
 				hInstance,
 				NULL);
 
@@ -968,6 +993,13 @@ namespace client {
 				reinterpret_cast<HMENU>(IDC_LISTCTRL_VIDEO),
 				hInstance,
 				NULL);
+
+			LVCOLUMN column;
+			column.mask = LVCF_TEXT | LVCF_FMT | LVCF_WIDTH;
+			column.fmt = LVCFMT_LEFT;     //居中显示
+			column.cx = 500-10;              //宽度
+			column.pszText = L"URL";
+			SendMessage(hwnd_video_, LVM_INSERTCOLUMN, 0, (LPARAM)&column);
 
 			back_hwnd_ = CreateWindow(
 				L"BUTTON", L"Back", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON | WS_DISABLED,
@@ -1193,6 +1225,54 @@ namespace client {
 					GetWindowLongPtr(browser_hwnd, GWL_EXSTYLE) & ~WS_EX_NOACTIVATE);
 			}
 		}
+	}
+
+	void RootWindowWin::OnUrlReady(CefString type, CefString url) {
+		//xlh todo
+		//std::string s = "\r\n\r\n";
+		//s += url.ToString().c_str();
+		//s += "\r\n\r\n";
+		//OutputDebugStringA(s.c_str());
+		ParseMediaList(type, url);
+	}
+
+	bool RootWindowWin::ParseMediaList(CefString type, CefString url)
+	{
+		std::string sType = type.ToString();
+
+		std::transform(sType.begin(), sType.end(), sType.begin(), ::tolower);
+
+		if (sType == "application/x-mpegurl")
+			sType = "video";
+		else
+			sType = type.ToString().substr(0, 5);
+
+		if (sType == "image" || sType == "video" || sType == "audio") {
+			std::string media = sType + "*" + url.ToString();
+
+			//std::lock_guard<std::recursive_mutex> auto_lock(lockList);
+			//media_list.push_back(media);
+
+			LVITEM item = { 0 };
+			item.iItem = 0;
+			item.mask = LVIF_TEXT;                    //设定有效项
+			item.pszText = (wchar_t* )url.c_str();
+
+			SendMessage(hwnd_video_, LVM_INSERTITEM, 0, (LPARAM)&item);
+
+			//LVITEM lvi;
+
+			//lvi.iSubItem = 1;
+
+			//lvi.pszText = (LPTSTR)szID;
+
+			//pmyListCtrl->SendMessage(LVM_SETITEMTEXT, nItem, (LPARAM)&lvi);
+
+
+			return true;
+		}
+
+		return false;
 	}
 
 	namespace {

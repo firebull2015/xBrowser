@@ -452,15 +452,6 @@ class ClientHandler : public CefClient,
 
   DISALLOW_COPY_AND_ASSIGN(ClientHandler);
 
-  //Media list
-//protected:
-//      std::recursive_mutex lockList;
-//      std::vector<std::string> media_list;
-//
-//      bool ParseMediaList(CefString type, CefString url);
-//public:
-//    std::vector<std::string>& GetMediaList();
-//    void ClearMediaList();
 };
 
 }  // namespace client

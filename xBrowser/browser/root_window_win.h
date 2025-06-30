@@ -86,6 +86,7 @@ class RootWindowWin : public RootWindow, public BrowserWindow::Delegate {
   void OnSize(bool minimized);
   void OnMove();
   void OnDpiChanged(WPARAM wParam, LPARAM lParam);
+  LRESULT OnNotify(WPARAM wParam, LPARAM lParam);
   bool OnEraseBkgnd();
   bool OnCommand(UINT id);
   void OnFind();

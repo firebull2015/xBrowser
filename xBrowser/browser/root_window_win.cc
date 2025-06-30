@@ -5,6 +5,7 @@
 #include "xBrowser/browser/root_window_win.h"
 
 #include <shellscalingapi.h>
+#include <shellapi.h>
 
 #include <set>
 #include <string>
@@ -634,6 +635,10 @@ namespace client {
 			self->hwnd_ = nullptr;
 			self->OnDestroyed();
 			break;
+
+		case WM_NOTIFY:
+			self->OnNotify(wParam, lParam);
+			break;
 		}
 
 		return DefWindowProc(hWnd, message, wParam, lParam);
@@ -801,6 +806,60 @@ namespace client {
 			rect->bottom - rect->top);
 	}
 
+	LRESULT RootWindowWin::OnNotify(WPARAM wParam, LPARAM lParam) {
+
+		NMHDR* nmhdr = reinterpret_cast<NMHDR*>(lParam);
+
+		HWND aPage[3] = {
+			hwnd_video_,
+			hwnd_audio_,
+			hwnd_image_,
+		};
+
+		switch (nmhdr->code)
+		{
+		case TCN_SELCHANGING:
+			if (nmhdr->idFrom == IDC_LISTCTRL_TAB)
+			{
+				return FALSE;
+			}
+			break;
+		case TCN_SELCHANGE:
+			if (nmhdr->idFrom == IDC_LISTCTRL_TAB)
+			{
+				int iPage = TabCtrl_GetCurSel(hwnd_tab_);
+				for (int i = 0; i < _countof(aPage); i++)
+					ShowWindow(aPage[i], i == iPage ? SW_SHOW : SW_HIDE);
+			}
+			break;
+		case NM_DBLCLK:
+			for (int i = 0; i < _countof(aPage); i++)
+			{
+				if (nmhdr->hwndFrom == aPage[i])
+				{
+					TCHAR buf[MAX_URL_LENGTH + 1] = { 0 };
+					int nItem = ListView_GetSelectionMark(aPage[i]);
+
+					ListView_GetItemText(aPage[i], nItem, 0, buf, sizeof(buf) / sizeof(buf[0]));
+
+					ShellExecute(
+						hwnd_,
+						L"open",
+						buf,
+						nullptr,
+						nullptr,
+						SW_SHOWNORMAL);
+
+					break;
+				}
+			}
+		break;
+
+		}
+		return TRUE;
+	}
+
+
 	bool RootWindowWin::OnEraseBkgnd() {
 		// Erase the background when the browser does not exist.
 		return (GetBrowser() == nullptr);
@@ -957,9 +1016,13 @@ namespace client {
 			ti.cchTextMax = (int)wcslen(ti.pszText);
 			SendMessage(hwnd_tab_, TCM_INSERTITEM, 0, (LPARAM)&ti);
 
-			ti.pszText = L"Image";
+			ti.pszText = L"Audio";
 			ti.cchTextMax = (int)wcslen(ti.pszText);
 			SendMessage(hwnd_tab_, TCM_INSERTITEM, 1, (LPARAM)&ti);
+
+			ti.pszText = L"Image";
+			ti.cchTextMax = (int)wcslen(ti.pszText);
+			SendMessage(hwnd_tab_, TCM_INSERTITEM, 2, (LPARAM)&ti);
 
 			hwnd_video_ = CreateWindow(WC_LISTVIEW,
 				L"",
@@ -1000,6 +1063,8 @@ namespace client {
 			column.cx = 500-10;              //宽度
 			column.pszText = L"URL";
 			SendMessage(hwnd_video_, LVM_INSERTCOLUMN, 0, (LPARAM)&column);
+			SendMessage(hwnd_audio_, LVM_INSERTCOLUMN, 0, (LPARAM)&column);
+			SendMessage(hwnd_image_, LVM_INSERTCOLUMN, 0, (LPARAM)&column);
 
 			back_hwnd_ = CreateWindow(
 				L"BUTTON", L"Back", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON | WS_DISABLED,
@@ -1228,11 +1293,6 @@ namespace client {
 	}
 
 	void RootWindowWin::OnUrlReady(CefString type, CefString url) {
-		//xlh todo
-		//std::string s = "\r\n\r\n";
-		//s += url.ToString().c_str();
-		//s += "\r\n\r\n";
-		//OutputDebugStringA(s.c_str());
 		ParseMediaList(type, url);
 	}
 
@@ -1247,32 +1307,21 @@ namespace client {
 		else
 			sType = type.ToString().substr(0, 5);
 
-		if (sType == "image" || sType == "video" || sType == "audio") {
-			std::string media = sType + "*" + url.ToString();
+		std::string media = sType + "*" + url.ToString();
+		LVITEM item = { 0 };
+		item.iItem = 0;
+		item.mask = LVIF_TEXT;                    
+		item.pszText = (wchar_t*)url.c_str();
 
-			//std::lock_guard<std::recursive_mutex> auto_lock(lockList);
-			//media_list.push_back(media);
-
-			LVITEM item = { 0 };
-			item.iItem = 0;
-			item.mask = LVIF_TEXT;                    //设定有效项
-			item.pszText = (wchar_t* )url.c_str();
-
+		if (sType == "video") 
 			SendMessage(hwnd_video_, LVM_INSERTITEM, 0, (LPARAM)&item);
+		else if (sType == "audio")
+			SendMessage(hwnd_audio_, LVM_INSERTITEM, 0, (LPARAM)&item);
+		else if (sType == "image")
+			SendMessage(hwnd_image_, LVM_INSERTITEM, 0, (LPARAM)&item);
 
-			//LVITEM lvi;
-
-			//lvi.iSubItem = 1;
-
-			//lvi.pszText = (LPTSTR)szID;
-
-			//pmyListCtrl->SendMessage(LVM_SETITEMTEXT, nItem, (LPARAM)&lvi);
-
-
-			return true;
-		}
-
-		return false;
+		return true;
+				
 	}
 
 	namespace {
